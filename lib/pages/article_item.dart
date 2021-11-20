@@ -6,13 +6,14 @@ class ArticleItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var isShare = (itemData['author'] ?? "").toString().isEmpty;
     var author = Row(
       children: [
         Expanded(
             child: Text.rich(TextSpan(children: [
-          const TextSpan(text: '作者'),
+          TextSpan(text: isShare ? '分享人：' : '作者：'),
           TextSpan(
-              text: itemData['author'],
+              text: itemData[isShare ? 'shareUser' : 'author'],
               style: TextStyle(color: Theme.of(context).primaryColor))
         ]))),
         Text(itemData['niceDate'])

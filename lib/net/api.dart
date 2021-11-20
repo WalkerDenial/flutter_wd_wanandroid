@@ -1,7 +1,5 @@
 import 'package:flutter_wd_wanandroid/net/http_mamager.dart';
 
-typedef void OnResult(Map<String, dynamic> data);
-
 class Api {
   static const baseUrl = "http://www.wanandroid.com/";
 
